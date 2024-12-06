@@ -41,3 +41,19 @@ Meals (
     delivery_date VARCHAR,
     
  )
+
+ Restaurant (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    menu_description TEXT,
+    address VARCHAR,
+    phone_number VARCHAR,
+    email VARCHAR,
+    meal_id INTEGER MEAL(id)
+    order_id INTEGER ORDER(id)
+    menu_id INTEGER MENU(id)
+    menu_options VARCHAR,
+    menu_price INTEGER,
+
+    
+ )
