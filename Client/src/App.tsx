@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,8 +8,22 @@ import Login from './Pages/Login'
 function App() {
   const [count, setCount] = useState(0)
 
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<HomePage count={count} setCount={setCount} />} />
+      </Routes>
+    </Router>
+  )
+}
+
+// Separate HomePage component
+const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: number) => number) => void }) => {
+  const navigate = useNavigate()
+
   const handleLogin = () => {
-    console.log('login')
+    navigate('/login')
   }
 
   return (
@@ -41,6 +56,5 @@ function App() {
     </>
   )
 }
-
 
 export default App
