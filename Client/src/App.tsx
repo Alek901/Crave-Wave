@@ -6,8 +6,17 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  const handleLogin = () => {
+    console.log('login')
+  }
+
   return (
     <>
+      <div className="login-container">
+        <button className="login-button" onClick={handleLogin}>
+          Login
+        </button>
+      </div>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
