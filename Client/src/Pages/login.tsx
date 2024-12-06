@@ -18,7 +18,7 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Add actual login authentication here
+    // TODO: Add actual login authentication here for later when we have a backend
     console.log('Login attempt with:', formData);
     
     // Simulate successful login and redirect
