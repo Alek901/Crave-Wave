@@ -178,3 +178,7 @@
 .find-food-button:hover {
   background-color: #535bf2;
 }
+
+body {
+  background-color: #2282a867;
+}
