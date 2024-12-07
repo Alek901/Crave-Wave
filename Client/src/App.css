@@ -98,3 +98,83 @@
 .login-page button:hover {
   background-color: #535bf2;
 }
+
+.login-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.website-logo {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 160px;
+  z-index: 1;
+  background-color: white;
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0665b3b7; /* Change this color to your preference */
+  padding: 6rem 0;
+  text-align: center;
+  
+}
+
+.find-restaurant-container {
+  position: absolute;
+  right: 9rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.find-restaurant-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.find-restaurant-button:hover {
+  background-color: #535bf2;
+}
+
+.find-food-container {
+  position: absolute;
+  left: 9rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.find-food-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.find-food-button:hover {
+  background-color: #535bf2;
+}
