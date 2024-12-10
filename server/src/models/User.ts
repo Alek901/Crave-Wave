@@ -2,15 +2,15 @@ import { Schema, model, type Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 
 // import schema from Book.js
-import bookSchema from './Meals.js';
-import type { BookDocument } from './Meals.js';
+import foodSchema from './Meals.js';
+import type { FoodDocument } from './Meals.js';
 
 export interface UserDocument extends Document {
   id: string;
   username: string;
   email: string;
   password: string;
-  savedBooks: BookDocument[];
+  savedFood: FoodDocument[];
   isCorrectPassword(password: string): Promise<boolean>;
   bookCount: number;
 }
@@ -33,7 +33,7 @@ const userSchema = new Schema<UserDocument>(
       required: true,
     },
     // set savedBooks to be an array of data that adheres to the bookSchema
-    savedBooks: [bookSchema],
+    savedFood: [foodSchema],
   },
   // set this to use virtual below
   {
@@ -60,7 +60,7 @@ userSchema.methods.isCorrectPassword = async function (password: string) {
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
 userSchema.virtual('bookCount').get(function () {
-  return this.savedBooks.length;
+  return this.savedFood.length;
 });
 
 const User = model<UserDocument>('User', userSchema);
