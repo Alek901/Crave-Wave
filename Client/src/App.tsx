@@ -20,14 +20,6 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
     navigate('/login')
   }
 
-  const handleFindRestaurant = () => {
-    navigate('/restaurants')
-  }
-
-  const handleFindFood = () => {
-    navigate('/pizza')
-  }
-
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     // Simple logic to redirect based on search query
@@ -70,16 +62,6 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
       <div className="login-container">
         <button className="login-button" onClick={handleLogin}>
           Login
-        </button>
-      </div>
-      <div className="find-restaurant-container">
-        <button className="find-restaurant-button" onClick={handleFindRestaurant}>
-          Wave Restaurants Near You
-        </button>
-      </div>
-      <div className="find-food-container">
-        <button className="find-food-button" onClick={handleFindFood}>
-          Crave Food Near You
         </button>
       </div>
     </>
