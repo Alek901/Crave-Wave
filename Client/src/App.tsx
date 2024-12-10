@@ -24,11 +24,11 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
     e.preventDefault()
     // Simple logic to redirect based on search query
     const query = searchQuery.toLowerCase()
-    if (query.includes('restaurant1')) {
+    if (query.includes('r1')) {
       navigate('/restaurant1')
-    } else if (query.includes('restaurant2')) {
+    } else if (query.includes('r2')) {
       navigate('/restaurant2')
-    } else if (query.includes('restaurant3')) {
+    } else if (query.includes('r3')) {
       navigate('/restaurant3')
     }
   }
