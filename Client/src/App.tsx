@@ -6,13 +6,13 @@ import Restaurants from './Pages/Restaurants'
 import Restaurant1 from './Pages/Restaurant1'
 import Restaurant2 from './Pages/Restaurant2'
 import Restaurant3 from './Pages/Restaurant3'
-import webnameLogo from '../Images/Webname.png'
+import webnameLogo from '../Images/Webname_nobg.png'
 import Pizza from './Pages/Pizza'
 
 function App() {
   const [count, setCount] = useState(0)
 
-const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: number) => number) => void }) => {
+const HomePage = ({  }: { count: number; setCount: (cb: (prev: number) => number) => void }) => {
   const navigate = useNavigate()
   const [searchQuery, setSearchQuery] = useState('')
 
