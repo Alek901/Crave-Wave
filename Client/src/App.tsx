@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import './App.css'
 import Login from './Pages/Login'
 import Restaurants from './Pages/Restaurants'
+import Restaurant1 from './Pages/Restaurant1'
+import Restaurant2 from './Pages/Restaurant2'
+import Restaurant3 from './Pages/Restaurant3'
 import webnameLogo from '../Images/Webname.png'
-import Food from './Pages/Food'
+import Pizza from './Pages/Pizza'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  
-
 const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: number) => number) => void }) => {
   const navigate = useNavigate()
+  const [searchQuery, setSearchQuery] = useState('')
 
   const handleLogin = () => {
     navigate('/login')
@@ -23,7 +25,20 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
   }
 
   const handleFindFood = () => {
-    navigate('/food')
+    navigate('/pizza')
+  }
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simple logic to redirect based on search query
+    const query = searchQuery.toLowerCase()
+    if (query.includes('restaurant1')) {
+      navigate('/restaurant1')
+    } else if (query.includes('restaurant2')) {
+      navigate('/restaurant2')
+    } else if (query.includes('restaurant3')) {
+      navigate('/restaurant3')
+    }
   }
 
   return (
@@ -35,6 +50,23 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
           className="website-logo"
         />
       </div>
+      
+      {/* Add search bar */}
+      <div className="search-container">
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search restaurants..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          <button type="submit" className="search-button">
+            Search
+          </button>
+        </form>
+      </div>
+
       <div className="login-container">
         <button className="login-button" onClick={handleLogin}>
           Login
@@ -45,7 +77,7 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
           Wave Restaurants Near You
         </button>
       </div>
-       <div className="find-food-container">
+      <div className="find-food-container">
         <button className="find-food-button" onClick={handleFindFood}>
           Crave Food Near You
         </button>
@@ -57,9 +89,12 @@ const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: nu
 return (
     <Router>
       <Routes>
-        <Route path="/food" element={<Food />} />
+        <Route path="/pizza" element={<Pizza />} />
         <Route path="/login" element={<Login />} />
         <Route path="/restaurants" element={<Restaurants />} />
+        <Route path="/restaurant1" element={<Restaurant1 />} />
+        <Route path="/restaurant2" element={<Restaurant2 />} />
+        <Route path="/restaurant3" element={<Restaurant3 />} />
         <Route path="/" element={<HomePage count={count} setCount={setCount} />} />
       </Routes>
     </Router>
