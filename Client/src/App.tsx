@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import './App.css'
-import Login from './Pages/Login'
+import Login from './Pages/login'
 import Restaurants from './Pages/Restaurants'
 import Restaurant1 from './Pages/Restaurant1'
 import Restaurant2 from './Pages/Restaurant2'
@@ -12,7 +12,7 @@ import Pizza from './Pages/Pizza'
 function App() {
   const [count, setCount] = useState(0)
 
-const HomePage = ({ count, setCount }: { count: number; setCount: (cb: (prev: number) => number) => void }) => {
+const HomePage = ({  }: { count: number; setCount: (cb: (prev: number) => number) => void }) => {
   const navigate = useNavigate()
   const [searchQuery, setSearchQuery] = useState('')
 
