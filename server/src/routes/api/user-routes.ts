@@ -1,23 +1,36 @@
 import express from 'express';
+import User from '../../models/User';
+import bcrypt from 'bcrypt';
+
 const router = express.Router();
-import {
-  createUser,
-  getSingleUser,
-  saveBook,
-  deleteBook,
-  login,
-} from '../../controllers/user-controller.js';
 
-// import middleware
-import { authenticateToken } from '../../services/auth.js';
+// Login endpoint
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
 
-// put authMiddleware anywhere we need to send a token for verification of user
-router.route('/').post(createUser).put(authenticateToken, saveBook);
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Email and password are required' });
+  }
 
-router.route('/login').post(login);
+  try {
+    const user = await User.findOne({ email });
 
-router.route('/me').get(authenticateToken, getSingleUser);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
 
-router.route('/books/:bookId').delete(authenticateToken, deleteBook);
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid password' });
+    }
+
+    // For simplicity, not implementing JWT here
+    res.status(200).json({ message: 'Login successful' });
+  } catch (error) {
+    res.status(500).json({ message: 'An error occurred', error });
+  }
+});
 
 export default router;
+
