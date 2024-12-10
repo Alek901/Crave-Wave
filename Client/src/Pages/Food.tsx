@@ -1,5 +1,5 @@
 import React from 'react';
-import './Food.css';
+//import './Food.css';
 
 const Food = () => {
   const foodItems = [

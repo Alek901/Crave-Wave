@@ -1,5 +1,5 @@
 import React from 'react';
-import './Restaurants.css';
+//import './Restaurants.css';
 
 const Restaurants = () => {
   const restaurantList = [
