@@ -1,4 +1,4 @@
-import models from '../models/index.js';
+import models from '../models';
 import db from '../config/connection.js';
 
 export default async (modelName: "Meals" | "Matchup", collectionName: string) => {
