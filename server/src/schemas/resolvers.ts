@@ -1,21 +1,28 @@
 export default resolvers;
-import index.ts { index} from '../models/index.js';
-import Meals, { Meals} from '../models/Meals.js';
-import Orders, { Orders } from '../models/Orders.js';
-import Users, { User } from '../models/Users.js'; 
-import Delivery, {Delivery } from '../models/Delivery.js';
-import Tech, {Tech} from '../Tech/Delivery.js'; 
+import User from '../models/User.js';
+import index from '../models/index.js';
+import Meals from '../models/Meals.js';
+import Orders from '../models/Orders.js';
+import Delivery from '../models/Delivery.js';
+import Tech from '../models/Delivery.js'; 
 
 const resolvers = {
   Query: {
     Meals: async (): Promise<[] | null> => {
-      return meals.find({});
+      return Meals.find({});
     },
     matchups: async (_parent: any, { _id }: { _id: string }): Promise<IMatchup[] | null> => {
       const params = _id ? { _id } : {};
       return Matchup.find(params);
     },
   },
+  Mutation: {
+    createUser(input: {
+      name: "",
+      email: "",
+      password: "",
+    })
+  }
   Mutation: {
     createMatchup: async (_parent: any, args: any): Promise<IMatchup | null> => {
       const matchup = await Matchup.create(args);
