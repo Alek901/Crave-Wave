@@ -1,4 +1,4 @@
-import Meal from './Meals.js';
-import Order from './Orders.js';
+import Meal from '../models/Meals.js';
+import Order from '../models/Orders.js';
 
 export { Meal, Order };

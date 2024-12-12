@@ -1,4 +1,4 @@
-import Meal, {IMeal} from '..models/Meals.js';
+import Meal, {IMeal} from '../models/Meals.js';
 import Order, { IOrder } from '../models/Orders.js';
 
 

@@ -38,11 +38,6 @@ const typeDefs = `
     delivery: [Delivery]
     restaurant: [Restaurant]
   }
-
-  type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
-  }
 `;
 
 export default typeDefs;
