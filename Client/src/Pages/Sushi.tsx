@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Sushi1 from '../assets/Sushi1.jpg'
+import Logo from '../assets/logo.png'
 
 const Sushi = () => {
   const [showConfirmation, setShowConfirmation] = useState(false)
@@ -15,12 +18,15 @@ const Sushi = () => {
 
   return (
     <div className="sushi-container">
+      <Link to="/">
+        <img src={Logo} alt="Crave-Wave Logo" className="logo" />
+      </Link>
       <div className="sushi-card">
         <img src={Sushi1} alt="Fresh Sushi Roll" className="sushi-image" />
         <div className="sushi-content">
-          <h2>The Dragon Roll Supreme</h2>
+          <h2>The Dragon Supreme Crave</h2>
           <p>
-            Experience our masterpiece sushi roll featuring fresh eel, cucumber, and avocado, 
+            Experience a masterpiece sushi roll featuring fresh eel, cucumber, and avocado, 
             wrapped in premium sushi rice and nori, topped with thinly sliced avocado, 
             unagi sauce, and a sprinkle of toasted sesame seeds. Served with wasabi, 
             pickled ginger, and our signature soy sauce.
@@ -116,9 +122,18 @@ const Sushi = () => {
           background: #ff4d4d;
           color: white;
         }
+
+        .logo {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          width: 125px;
+          height: auto;
+          z-index: 1000;
+          cursor: pointer;
+        }
       `}</style>
     </div>
   )
 }
-
 export default Sushi

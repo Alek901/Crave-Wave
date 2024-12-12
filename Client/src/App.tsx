@@ -12,6 +12,7 @@ import Burgers from './Pages/Burgers';
 import Sushi from './Pages/Sushi';
 
 
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -111,5 +112,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
