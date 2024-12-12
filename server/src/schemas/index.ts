@@ -1,4 +1,4 @@
-import typeDefs from './typeDefs.js';
-import resolvers from './resolvers.js';
+import Meal from './Meals.js';
+import Order from './Orders.js';
 
-export { typeDefs, resolvers };
+export { Meal, Order };
