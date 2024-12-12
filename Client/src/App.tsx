@@ -9,7 +9,7 @@ import Restaurant3 from './Pages/Restaurant3';
 import webnameLogo from '../Images/Webname_nobg.png';
 import Pizza from './Pages/Pizza';
 import Burgers from './Pages/Burgers';
- import Sushi from './Pages/Sushi';
+//import Sushi from './Pages/Sushi';
 
 
 function App() {
@@ -98,7 +98,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        { <Route path="/Sushi" element={<Sushi />} />}
+        {/* { <Route path="/Sushi" element={<Sushi />} />} */}
         <Route path="/Burgers" element={<Burgers />} />
         <Route path="/pizza" element={<Pizza />} />
         <Route path="/login" element={<Login />} />
