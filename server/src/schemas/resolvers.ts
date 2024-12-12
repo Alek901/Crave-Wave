@@ -1,10 +1,15 @@
-import Tech, { ITech } from '../models/Tech.js';
-import Matchup, { IMatchup } from '../models/Matchup.js';
+export default resolvers;
+import index.ts { index} from '../models/index.js';
+import Meals, { Meals} from '../models/Meals.js';
+import Orders, { Orders } from '../models/Orders.js';
+import Users, { User } from '../models/Users.js'; 
+import Delivery, {Delivery } from '../models/Delivery.js';
+import Tech, {Tech} from '../Tech/Delivery.js'; 
 
 const resolvers = {
   Query: {
-    tech: async (): Promise<ITech[] | null> => {
-      return Tech.find({});
+    Meals: async (): Promise<[] | null> => {
+      return meals.find({});
     },
     matchups: async (_parent: any, { _id }: { _id: string }): Promise<IMatchup[] | null> => {
       const params = _id ? { _id } : {};
