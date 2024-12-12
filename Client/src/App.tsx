@@ -61,19 +61,19 @@ function App() {
 
         {/* Food Cards */}
         <div className="food-images-container">
-          <div className="food-image-card" onClick={() => navigate('/pizza')}>
+          <div className="food-image-card" onClick={() => navigate('/burgers')}>
             <img src="path/to/pizza.jpg" alt="Pizza" className="food-image" />
-            <div className="food-title">Pizza</div>
+            <div className="food-title">Burgers</div>
             <div className="food-price">$12.99</div>
           </div>
-          <div className="food-image-card" onClick={() => navigate('/sushi')}>
+          <div className="food-image-card" onClick={() => navigate('/pizza')}>
             <img src="path/to/sushi.jpg" alt="Sushi" className="food-image" />
-            <div className="food-title">Sushi</div>
+            <div className="food-title">Pizza</div>
             <div className="food-price">$15.99</div>
           </div>
-          <div className="food-image-card" onClick={() => navigate('/tacos')}>
+          <div className="food-image-card" onClick={() => navigate('/Sushi')}>
             <img src="path/to/tacos.jpg" alt="Tacos" className="food-image" />
-            <div className="food-title">Tacos</div>
+            <div className="food-title">Sushi</div>
             <div className="food-price">$10.99</div>
           </div>
           <div className="food-image-card" onClick={() => navigate('/chicken')}>
