@@ -24,8 +24,8 @@ const Burgers = () => {
           <h2>The Ultimate Crave Burger</h2>
           <p>
             Savor our signature burger featuring a perfectly grilled Angus beef patty,
-            topped with melted cheddar cheese, crispy bacon, fresh lettuce, tomatoes,
-            and our secret Crave sauce. Served on a toasted brioche bun.
+            topped with cheddar cheese, pickles, fresh lettuce, sliced tomatoes, onions,
+             a light mayo sauce and served on a brioche bun.
           </p>
           <button className="order-button" onClick={handleOrderClick}>
             Order
