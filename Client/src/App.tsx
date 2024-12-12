@@ -8,6 +8,9 @@ import Restaurant2 from './Pages/Restaurant2';
 import Restaurant3 from './Pages/Restaurant3';
 import webnameLogo from '../Images/Webname_nobg.png';
 import Pizza from './Pages/Pizza';
+import Burgers from './Pages/Burgers';
+// import Sushi from './Pages/Sushi';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -61,12 +64,12 @@ function App() {
 
         {/* Food Cards */}
         <div className="food-images-container">
-          <div className="food-image-card" onClick={() => navigate('/burgers')}>
+          <div className="food-image-card" onClick={() => navigate('/Burgers')}>
             <img src="path/to/pizza.jpg" alt="Pizza" className="food-image" />
             <div className="food-title">Burgers</div>
             <div className="food-price">$12.99</div>
           </div>
-          <div className="food-image-card" onClick={() => navigate('/pizza')}>
+          <div className="food-image-card" onClick={() => navigate('/Pizza')}>
             <img src="path/to/sushi.jpg" alt="Sushi" className="food-image" />
             <div className="food-title">Pizza</div>
             <div className="food-price">$15.99</div>
@@ -76,7 +79,7 @@ function App() {
             <div className="food-title">Sushi</div>
             <div className="food-price">$10.99</div>
           </div>
-          <div className="food-image-card" onClick={() => navigate('/chicken')}>
+          <div className="food-image-card" onClick={() => navigate('/Chicken')}>
             <img src="path/to/chicken.jpg" alt="Chicken" className="food-image" />
             <div className="food-title">Chicken</div>
             <div className="food-price">$14.99</div>
@@ -95,6 +98,8 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* <Route path="/Sushi" element={<Sushi />} /> */}
+        <Route path="/Burgers" element={<Burgers />} />
         <Route path="/pizza" element={<Pizza />} />
         <Route path="/login" element={<Login />} />
         <Route path="/restaurants" element={<Restaurants />} />
