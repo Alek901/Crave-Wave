@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Pizza1 from '../assets/Pizza1.jpg';
+import Logo from '../assets/logo.png';
 
 const Pizza = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -15,6 +18,9 @@ const Pizza = () => {
 
   return (
     <div className="pizza-container">
+      <Link to="/">
+        <img src={Logo} alt="Crave-Wave Logo" className="logo" />
+      </Link>
       <div className="pizza-card">
         <img src={Pizza1} alt="Deluxe Pizza" className="pizza-image" />
         <div className="pizza-content">
@@ -115,6 +121,16 @@ const Pizza = () => {
           cursor: pointer;
           background: #ff4d4d;
           color: white;
+        }
+
+        .logo {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          width: 125px;
+          height: auto;
+          z-index: 1000;
+          cursor: pointer;
         }
       `}</style>
     </div>

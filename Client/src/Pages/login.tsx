@@ -1,5 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import Logo from '../assets/logo.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +29,9 @@ const Login = () => {
 
   return (
     <div className="login-page">
+      <Link to="/">
+        <img src={Logo} alt="Crave-Wave Logo" className="logo" />
+      </Link>
       <h2>Login to Crave-Wave</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -53,6 +58,17 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
       </form>
+      <style jsx>{`
+        .logo {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          width: 125px;
+          height: auto;
+          z-index: 1000;
+          cursor: pointer;
+        }
+      `}</style>
     </div>
   );
 };
