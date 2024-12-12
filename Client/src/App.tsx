@@ -100,7 +100,7 @@ function App() {
       <Routes>
         { <Route path="/Sushi" element={<Sushi />} />}
         <Route path="/Burgers" element={<Burgers />} />
-        <Route path="/pizza" element={<Pizza />} />
+        <Route path="/Pizza" element={<Pizza />} />
         <Route path="/login" element={<Login />} />
         <Route path="/restaurants" element={<Restaurants />} />
         <Route path="/restaurant1" element={<Restaurant1 />} />
