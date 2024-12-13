@@ -13,11 +13,10 @@ const deliveryResolvers = {
         },
     },
     Mutation: {
-        createDelivery: async (_parent: any, { input}: { input: any}): Promise<Delivery> => {
-            const Delivery = await Delivery.create(input);
-            return Delivery;
-        },
-        updateDelivery: async (_parent: any, { id, input}: { id: string; input: any}
+        createDelivery: async (_parent: any, { input }: { input: any }): Promise<Delivery> => {
+            const newDelivery = await Delivery.create(input);
+            return newDelivery;
+        },        updateDelivery: async (_parent: any, { id, input}: { id: string; input: any}
         ): Promise<Delivery | null> => {
             return await Delivery.findByIdAndUpdate(id, input, { new: true });
         },
