@@ -33,7 +33,7 @@ const resolvers = {
     },
   
   
-    Delivery: async (): Promise<typeof Delivery[]> => {
+    Deliverys: async (): Promise<typeof Delivery[]> => {
             return await Delivery.find({});
     },
     Delivery: async (_parent: any, { id }: { id: string }): Promise<typeof Delivery | null> => {
