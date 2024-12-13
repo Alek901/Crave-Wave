@@ -5,6 +5,7 @@ import index from '../models/index.js';
 import Meal from '../models/Meals.js';
 import Orders from '../models/Orders.js';
 import Delivery from '../models/Delivery.js'; 
+import Restaurant from '../models/Restaurant.js'
 
 const resolvers = {
   Query: {
@@ -14,7 +15,31 @@ const resolvers = {
     meal: async (_parent: any, { id }: { id: string }): Promise<typeof Meal | null> => {
             return await Meal.findById(id);
     },
+  }, 
+    Users: async (): Promise<typeof User[]> => {
+            return await User.find({});
+    },
+    User: async (_parent: any, { id }: { id: string }): Promise<typeof User | null> => {
+            return await User.findById(id);
+    },
   },
+   
+  
+    Orders: async (): Promise<typeof Orders[]> => {
+            return await Orders.find({});
+    },
+    Order: async (_parent: any, { id }: { id: string }): Promise<typeof Orders | null> => {
+            return await Orders.findById(id);
+    },
+  
+  
+    Delivery: async (): Promise<typeof Delivery[]> => {
+            return await Delivery.find({});
+    },
+    Delivery: async (_parent: any, { id }: { id: string }): Promise<typeof Delivery | null> => {
+            return await Delivery.findById(id);
+    },
+  
   Mutation: {
     createUser(input): {
       name: "",
