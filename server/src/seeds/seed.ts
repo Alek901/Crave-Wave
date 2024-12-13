@@ -1,7 +1,5 @@
 import db from '../config/connection.js';
-import Meals from '../models/index.js';
-import Delivery from '../models/index.js';
-import Restaurant from '../models/index.js';
+import { Delivery, Meals, Restaurant, Order } from '../models/index.js';
 import mealSeeds from './mealData.json' assert { type: "json" };
 import cleanDB from './cleanDB.js';
 
