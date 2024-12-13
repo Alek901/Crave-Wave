@@ -2,20 +2,18 @@
 
 import User from '../models/User.js';
 import index from '../models/index.js';
-import Meals from '../models/Meals.js';
+import Meal from '../models/Meals.js';
 import Orders from '../models/Orders.js';
-import Delivery from '../models/Delivery.js';
-import Tech from '../models/Delivery.js'; 
+import Delivery from '../models/Delivery.js'; 
 
 const resolvers = {
   Query: {
-    Meals: async (): Promise<any[] | null> => {
-      return Meals.find({});
+    meals: async (): Promise<typeof Meal[]> => {
+            return await Meal.find({});
     },
-    // matchups: async (_parent: any, { _id }: { _id: string }): Promise<IMatchup[] | null> => {
-    //   const params = _id ? { _id } : {};
-    //   return Matchup.find(params);
-    // },
+    meal: async (_parent: any, { id }: { id: string }): Promise<typeof Meal | null> => {
+            return await Meal.findById(id);
+    },
   },
   Mutation: {
     createUser(input): {
