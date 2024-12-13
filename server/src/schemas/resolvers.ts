@@ -3,7 +3,7 @@
 import User from '../models/User.js';
 import index from '../models/index.js';
 import Meal from '../models/Meals.js';
-import Orders from '../models/Orders.js';
+import Order from '../models/Orders.js';
 import Delivery from '../models/Delivery.js'; 
 import Restaurant from '../models/Restaurant.js'
 
@@ -15,21 +15,21 @@ const resolvers = {
     meal: async (_parent: any, { id }: { id: string }): Promise<typeof Meal | null> => {
             return await Meal.findById(id);
     },
-  }, 
+   
     Users: async (): Promise<typeof User[]> => {
             return await User.find({});
     },
     User: async (_parent: any, { id }: { id: string }): Promise<typeof User | null> => {
             return await User.findById(id);
     },
-  },
+  
    
   
-    Orders: async (): Promise<typeof Orders[]> => {
-            return await Orders.find({});
+    Orders: async (): Promise<typeof Order[]> => {
+            return await Order.find({});
     },
-    Order: async (_parent: any, { id }: { id: string }): Promise<typeof Orders | null> => {
-            return await Orders.findById(id);
+    Order: async (_parent: any, { id }: { id: string }): Promise<typeof Order | null> => {
+            return await Order.findById(id);
     },
   
   
@@ -59,6 +59,7 @@ const resolvers = {
     //     { new: true }
     //   );
     //   return vote;
+  }
   }
 }
 
