@@ -1,6 +1,6 @@
 import db from '../config/connection.js';
 import { Delivery, Meals, Restaurant, Order } from '../models/index.js';
-import mealSeeds from './mealData.json' assert { type: "json" };
+import mealSeeds from './mealData.json' with { type: "json" };
 import cleanDB from './cleanDB.js';
 
 const seedDatabase = async (): Promise<void> => {

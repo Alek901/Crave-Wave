@@ -5,7 +5,7 @@
     "rootDir": "src" /* Specify the root folder within your source files. */,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
 
     /* Emit */
     "outDir": "./dist" /* Specify an output folder for all emitted files. */
