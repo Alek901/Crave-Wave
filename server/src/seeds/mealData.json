@@ -1,6 +1,7 @@
 [
     {
         "name":"Burger",
+        "delivery": true,
         "mealName": "The Ultimate Crave Burger",
         "description": [
             "Savor our signature burger featuring a perfectly grilled Angus beef patty, topped with cheddar cheese, fresh lettuce, sliced tomatoes, onions, and served on a brioche bun."
@@ -8,6 +9,7 @@
     },
     {
         "name": "Pizza",
+        "delivery": true,
         "mealName": "The Supreme Crave Pizza",
         "description": [
             "Experience our mouthwatering signature pizza featuring a perfect blend of premium mozzarella cheese, fresh basil, spicy pepperoni, Italian sausage, bell peppers, mushrooms, and black olives, all on our hand-tossed artisanal crust with our secret recipe tomato sauce."
@@ -15,6 +17,7 @@
     },
     {
         "name": "Sushi",
+        "delivery": true,
         "mealName": "The Dragon Supreme Crave",
         "description": [
             "Experience a masterpiece sushi roll featuring fresh eel, cucumber, and avocado, wrapped in premium sushi rice and nori, topped with thinly sliced avocado, unagi sauce, and a sprinkle of toasted sesame seeds. Served with wasabi, pickled ginger, and our signature soy sauce."
@@ -22,6 +25,7 @@
     },
         {
             "name": "Chicken",
+            "delivery": false,
             "mealName": "Crave Chicken",
             "description": [
                 "Chicken info"
