@@ -36,13 +36,13 @@ export const login = async (req: Request, res: Response) => {
     return res.status(400).json({ message: "Can't find this user" });
   }
 
-  const correctPw = await user.isCorrectPassword(req.body.password);
+  //const correctPw = await user.isCorrectPassword(req.body.password);
 
-  if (!correctPw) {
-    return res.status(400).json({ message: 'Wrong password!' });
-  }
-  const token = signToken(user.username, user.password, user._id);
-  return res.json({ token, user });
+  // if (!correctPw) {
+  //   return res.status(400).json({ message: 'Wrong password!' });
+  // }
+  // const token = signToken(user.username, user.password, user._id);
+  // return res.json({ token, user });
 };
 
 // save a book to a user's `savedBooks` field by adding it to the set (to prevent duplicates)
