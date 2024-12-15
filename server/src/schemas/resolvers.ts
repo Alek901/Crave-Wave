@@ -1,7 +1,4 @@
- 
-
 import User from '../models/User.js';
-import index from '../models/index.js';
 import Meal from '../models/Meals.js';
 import Order from '../models/Orders.js';
 import Delivery from '../models/Delivery.js'; 
@@ -33,34 +30,54 @@ const resolvers = {
     },
   
   
-    Delivery: async (): Promise<typeof Delivery[]> => {
+    Deliverys: async (): Promise<typeof Delivery[]> => {
             return await Delivery.find({});
     },
     Delivery: async (_parent: any, { id }: { id: string }): Promise<typeof Delivery | null> => {
             return await Delivery.findById(id);
     },
-  
-  Mutation: {
-    createUser(input): {
-      name: "",
-      email: "",
-      password: "",
-    }
-  
-  // Mutation: {
-  //   createMatchup: async (_parent: any, args: any): Promise<IMatchup | null> => {
-  //     const matchup = await Matchup.create(args);
-  //     return matchup;
-    // },
-    // createVote: async (_parent: any, { _id, techNum }: { _id: string, techNum: number}): Promise<IMatchup | null> => {
-    //   const vote = await Matchup.findOneAndUpdate(
-    //     { _id },
-    //     { $inc: { [`tech${techNum}_votes`]: 1 } },
-    //     { new: true }
-    //   );
-    //   return vote;
+    Restaurants: async (): Promise<typeof Restaurant[]> => {
+            return await Restaurant.find({});
+    },
+    Restaurant: async (_parent: any, { id }: { id: string }): Promise<typeof Restaurant | null> => {
+            return await Restaurant.findById(id);
+    },
+  },
+
+
+    Mutation: {
+      createUser: async (_parent: any, { input }: { input: any }): Promise<any> => {
+            return await User.create(input);
+      },
+        
+      updateUser: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof User | null> => {
+            return await User.findByIdAndUpdate(id, input, { new: true });
+      },
+        
+      createMeal: async (_parent: any, { input }: { input: any }): Promise<any> => {
+            return await Meal.create(input);
+      },
+        
+      updateMeal: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof Meal | null> => {
+            return await Meal.findByIdAndUpdate(id, input, { new: true });
+      },
+        
+      createOrder: async (_parent: any, { input }: { input: any }): Promise<any> => {
+            return await Order.create(input);
+      },
+        
+      updateOrder: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof Order | null> => {
+            return await Order.findByIdAndUpdate(id, input, { new: true });
+      },
+        
+      createDelivery: async (_parent: any, { input }: { input: any }): Promise<any> => {
+            return await Delivery.create(input);
+      },
+        
+      updateDelivery: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof Delivery | null> => {
+            return await Delivery.findByIdAndUpdate(id, input, { new: true });
+      },
+    },
   }
-  }
-}
 
 export default resolvers;

@@ -1,7 +1,18 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Crave Wave');
+dotenv.config();
 
-const db = mongoose.connection;
+const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/mydatabase';
 
-export default mongoose.connection;
+async function db() {
+    try {
+        await mongoose.connect(mongoUri);
+        console.log('Connected to MongoDB');
+    } catch (error) {
+        console.error('Database connection failed:', error);
+        throw new Error('Database connection failed.');
+    }
+}
+
+export default db;

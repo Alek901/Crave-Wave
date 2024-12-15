@@ -58,7 +58,7 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
       </form>
-      <style jsx>{`
+      <style>{`
         .logo {
           position: fixed;
           top: 20px;

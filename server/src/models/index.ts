@@ -1,6 +1,4 @@
-import Delivery from './Delivery.js';
-import Meals from './Meals.js';
-import Restaurant from './Restaurant.js';
-import Order from './Orders.js';
-
-export default { Delivery, Meals, Restaurant, Order };
+export { default as Delivery } from './Delivery.js';
+export { default as Meals } from './Meals.js';
+export { default as Restaurant } from './Restaurant.js';
+export { default as Order } from './Orders.js';
