@@ -3,7 +3,7 @@ import Orders from "../models/Orders"
 
 type OrdersType = InferSchemaType<typeof Orders.schema>;
 
-cosnt OrdersResolvers = {
+const OrdersResolvers = {
     Query: {
         orders: async (): Promise<OrdersType[] | null> => {
             return await Orders.find({});
