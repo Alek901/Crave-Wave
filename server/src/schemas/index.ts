@@ -1,4 +1,4 @@
-import Meal from '../models/Meals.js';
-import Order from '../models/Orders.js';
+import resolver from '../schemas/resolvers';
+import typeDefs from '../schemas/typeDefs';
 
-export { Meal, Order };
+export { resolver, typeDefs };

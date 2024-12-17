@@ -1,4 +1,6 @@
 import React from 'react'
+import { useMutation } from '@apollo/client';
+import { CREATE_MEAL } from '../utils/mutations';
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Sushi1 from '../assets/Sushi1.jpg'
@@ -11,9 +13,14 @@ const Sushi = () => {
     setShowConfirmation(true)
   }
 
-  const handleConfirm = () => {
-    setShowConfirmation(false)
-    alert('It has been ordered to your location')
+  const [createMeal] = useMutation(CREATE_MEAL);
+    
+        const handleConfirm = async(input: any) => {
+          setShowConfirmation(false);
+          alert('It has been ordered to your location');
+          await createMeal({
+            variables: { input: input },
+          })
   }
 
   return (

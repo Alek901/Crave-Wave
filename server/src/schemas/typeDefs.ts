@@ -32,12 +32,44 @@ const typeDefs = `
     menu_options: String!
     menu_price: Int
   }
+  type Users {
+    _id: ID!
+    username: String!
+    email: String!
+    password:String!
+  }
+  type Order {
+    _id: ID!
+    name: String!
+    description: String!
+    billing_price: Int
+    total_price: Int
+    status: Int
+    billing_address: String!
+  }
 
   type Query {
     meals: [Meals]
-    delivery: [Delivery]
-    restaurant: [Restaurant]
+    meal: Meals
+    Deliverys: [Delivery]
+    Delivery: Delivery
+    Restaurants: [Restaurant]
+    Restaurant: Restaurant
+    Users: [Users]
+    User: Users
+    Orders: [Order]
+    Order: Order
   }
+  type Mutation {
+  createUser(input: String!): Users!
+  updateUser(id: ID!, input: String!): Users
+  createMeal(input: String!): Meals!
+  updateMeal(id: ID!, input: String!): Meals
+  createOrder(input: String!): Order!
+  updateOrder(id: ID!, input: String!): Order
+  createDelivery(input: String!): Delivery!
+  updateDelivery(id: ID!, input: String!): Delivery
+}
 `;
 
 export default typeDefs;

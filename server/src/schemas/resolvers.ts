@@ -6,40 +6,40 @@ import Restaurant from '../models/Restaurant.js'
 
 const resolvers = {
   Query: {
-    meals: async (): Promise<typeof Meal[]> => {
+    meals: async (): Promise<any[]> => {
             return await Meal.find({});
     },
-    meal: async (_parent: any, { id }: { id: string }): Promise<typeof Meal | null> => {
+    meal: async (_parent: any, { id }: { id: string }): Promise<any | null> => {
             return await Meal.findById(id);
     },
    
-    Users: async (): Promise<typeof User[]> => {
+    Users: async (): Promise<any[]> => {
             return await User.find({});
     },
-    User: async (_parent: any, { id }: { id: string }): Promise<typeof User | null> => {
+    User: async (_parent: any, { id }: { id: string }): Promise<any | null> => {
             return await User.findById(id);
     },
   
    
   
-    Orders: async (): Promise<typeof Order[]> => {
+    Orders: async (): Promise<any[]> => {
             return await Order.find({});
     },
-    Order: async (_parent: any, { id }: { id: string }): Promise<typeof Order | null> => {
+    Order: async (_parent: any, { id }: { id: string }): Promise<any | null> => {
             return await Order.findById(id);
     },
   
   
-    Deliverys: async (): Promise<typeof Delivery[]> => {
+    Deliverys: async (): Promise<any[]> => {
             return await Delivery.find({});
     },
-    Delivery: async (_parent: any, { id }: { id: string }): Promise<typeof Delivery | null> => {
+    Delivery: async (_parent: any, { id }: { id: string }): Promise<any | null> => {
             return await Delivery.findById(id);
     },
-    Restaurants: async (): Promise<typeof Restaurant[]> => {
+    Restaurants: async (): Promise<any[]> => {
             return await Restaurant.find({});
     },
-    Restaurant: async (_parent: any, { id }: { id: string }): Promise<typeof Restaurant | null> => {
+    Restaurant: async (_parent: any, { id }: { id: string }): Promise<any | null> => {
             return await Restaurant.findById(id);
     },
   },
@@ -50,7 +50,7 @@ const resolvers = {
             return await User.create(input);
       },
         
-      updateUser: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof User | null> => {
+      updateUser: async (_parent: any, { id, input }: { id: string; input: any }): Promise<any | null> => {
             return await User.findByIdAndUpdate(id, input, { new: true });
       },
         
@@ -58,7 +58,7 @@ const resolvers = {
             return await Meal.create(input);
       },
         
-      updateMeal: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof Meal | null> => {
+      updateMeal: async (_parent: any, { id, input }: { id: string; input: any }): Promise<any | null> => {
             return await Meal.findByIdAndUpdate(id, input, { new: true });
       },
         
@@ -66,7 +66,7 @@ const resolvers = {
             return await Order.create(input);
       },
         
-      updateOrder: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof Order | null> => {
+      updateOrder: async (_parent: any, { id, input }: { id: string; input: any }): Promise<any | null> => {
             return await Order.findByIdAndUpdate(id, input, { new: true });
       },
         
@@ -74,7 +74,7 @@ const resolvers = {
             return await Delivery.create(input);
       },
         
-      updateDelivery: async (_parent: any, { id, input }: { id: string; input: any }): Promise<typeof Delivery | null> => {
+      updateDelivery: async (_parent: any, { id, input }: { id: string; input: any }): Promise<any | null> => {
             return await Delivery.findByIdAndUpdate(id, input, { new: true });
       },
     },
